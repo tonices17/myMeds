@@ -15,9 +15,16 @@
                 <a href="{{ route('home') }}#contacto">Contacto</a>
             </li>
             <li class="nav__lista-item">
+                @if (@session('success'))
+                <a href="{{ route('profile') }}" class="nav__login">
+                    <img src="{{ asset('assets/img/login.png') }}" alt="login-user">
+                </a>
+                @else
                 <a href="{{ route('register') }}" class="nav__login">
                     <img src="{{ asset('assets/img/login.png') }}" alt="login-user">
                 </a>
+                @endif
+
             </li>
         </ul>
         <img class="nav__menu" src="{{ asset('assets/img/menu.png') }}" alt="menu">
